@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'chachisha.apps.ChachishaConfig', #chachisha app
+    'users.apps.UsersConfig', #users app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
