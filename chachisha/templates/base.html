@@ -34,11 +34,6 @@
     </nav>
     <main role="main" class="container">
         <div class="row">
-            <div class="col-md-4">
-                <div class="menu-option">
-                    <h3>Content menus</h3>
-                </div>
-            </div>
             <div class="col-md-8">
                 {% if messages %}
                 <!--display message-->
@@ -49,6 +44,11 @@
                 {% endfor %} {% endif %}
                 <!-- main content  -->
                 {% block content %} {% endblock content %}
+            </div>
+            <div class="col-md-4">
+                <div class="menu-option">
+                    <h3>Content menus</h3>
+                </div>
             </div>
         </div>
     </main>
