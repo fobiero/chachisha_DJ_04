@@ -16,13 +16,15 @@ posts = [
     }
 ]
 
+def index(req) :
+    return render (req, 'index.html')
 
 def home(req):
     data = {
         'posts' : posts
     }
 
-    return render(req,'index.html',data)
+    return render(req,'home.html',data)
 
 def profile(req):
 

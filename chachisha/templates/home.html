@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+<!-- content  -->
+{% block content %}
+<h1>Posts Data</h1>
+{% for post in posts %}
+<h3>{{post.title}}</h3>
+<h5>Post written by {{post.author}}</h5>
+<p>Content : {{post.content}} and posted on {{post.date_posted}}</p>
+{% endfor %}
+<!-- end for  -->
+{% endblock content %}
