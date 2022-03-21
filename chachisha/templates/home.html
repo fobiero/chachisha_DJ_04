@@ -6,7 +6,7 @@
 {% for post in posts %}
 <h3>{{post.title}}</h3>
 <h5>Post written by {{post.author}}</h5>
-<p>Content : {{post.content}} and posted on {{post.date_posted}}</p>
+<p>Content : {{post.content}} and posted on {{post.date_posted | date:"F j, Y" }}</p>
 {% endfor %}
 <!-- end for  -->
 {% endblock content %}
