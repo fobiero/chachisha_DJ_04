@@ -25,6 +25,5 @@ def home(req):
     return render(req,'index.html',data)
 
 def profile(req):
-    title = 'Profile'
 
-    return render(req,'profile.html', title=title)
+    return render(req,'profile.html')
