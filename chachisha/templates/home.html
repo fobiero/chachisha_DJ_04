@@ -6,6 +6,7 @@
 {% for post in posts %}
 <h3>{{post.title}}</h3>
 <h5>Post written by {{post.author}}</h5>
+<img src="{{post.image}}" alt="Post Image">
 <p>Content : {{post.content}} and posted on {{post.date_posted | date:"F j, Y" }}</p>
 {% endfor %}
 <!-- end for  -->
