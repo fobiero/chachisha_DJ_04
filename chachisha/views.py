@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Post
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
 
 def index(req) :
@@ -10,8 +10,16 @@ def index(req) :
 # @TODO:get all posts 
 @login_required
 def home(req):
-    data = {
+    context = {
         'posts' : Post.objects.all()
     }
 
-    return render(req,'home.html',data)
+    return render(req,'home.html',context)
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'home.html'
+    context_object_name = 'posts'
+    ordering = ['date_posted']
+
+
