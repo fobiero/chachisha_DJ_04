@@ -4,7 +4,14 @@
 <!--css framework-->
 {% block content %}
 <!--block content-->
-
-<h1>{{user.username}}</h1>
+<div class="content">
+    <div class="mdeia">
+        <img src="{{user.profile.image.url}}" alt="" class="prof-pc">
+        <div class="media-body">
+            <h2 class="ac-hd">{{user.username}}</h2>
+            <p class="p-cont">{{user.email}}</p>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
