@@ -1,4 +1,4 @@
-# Chacisha
+# Chachisha
 
 ## Description 
 <p>Project based application where users are able to view posted news tat happen to on their hoods, neighbourhoods and also be able to post on the social app.  </p>
