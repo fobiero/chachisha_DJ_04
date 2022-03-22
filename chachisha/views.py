@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 from django.contrib.auth.decorators import login_required
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 
 
 def index(req) :
@@ -22,4 +22,7 @@ class PostListView(ListView):
     context_object_name = 'posts'
     ordering = ['date_posted']
 
+class PostCreateView(CreateView):
+    model = Post
+    fields = ['title', 'content','image']
 
