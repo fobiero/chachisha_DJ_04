@@ -3,7 +3,18 @@
 ## Description 
 <p>Project based application where users are able to view posted news tat happen to on their hoods, neighbourhoods and also be able to post on the social app.  </p>
 
-## Prerequisites
+## User Stories
+<Ol>
+    <li>Sign in with the application to start using.</li>
+    <li>Set up a profile about me and a general location and my neighborhood name.</li>
+<li>Find a list of different businesses in my neighborhood.</li>
+<li>Find Contact Information for the health department and Police authorities near my neighborhood.</li>
+<li>Create Posts that will be visible to everyone in my neighborhood.</li>
+<li>Change My neighborhood when I decide to move out.
+Only view details of a single neighborhood.</li>
+</Ol>
+
+### Prerequisites
 
 This project runs and is built wit python 3.8 and above. To use it ensure your python and pip are upto date and to the latest version of python3 or higher. 
 
@@ -47,7 +58,6 @@ Attached are links to github and live links to fully fetch source code and live 
 * CSS3
 * Bootstrap
 * Font awesome
-
 
 ## Authors
 
