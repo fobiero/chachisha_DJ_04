@@ -1,0 +1,32 @@
+{%extends "base.html"%} {% load bootstrap5 %} {% block title %}Login{% endblock %} {% block content %}
+<div class="container">
+    <div class="row">
+        <!-- <div class="card" style="max-width: 30rem; margin-left: 30%; margin-top: 5%; padding: 2%"> -->
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% if form.errors %}
+            <p>Password or Username is incorrect</p>
+            {% endif %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-center p-4">Log In</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="/accounts/login/" method="post">
+                        {% csrf_token %} {% bootstrap_form form%}
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-outline-info" value="Login" />
+                        </div>
+                        <input type="hidden" name="next" value="{{next}}" />
+                    </form>
+                    <p class="mt-5" Dont have an account?> <a href="/accounts/register/" class="text-primary">Create Account</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <!-- </div> -->
+    </div>
+</div>
+
+{% endblock %}

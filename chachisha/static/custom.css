@@ -4,29 +4,6 @@
     box-sizing: border-box;
 }
 
-
-/* BODY  */
-
 body {
-    background-color: #F6F8FA;
-}
-
-.post-cont {
-    background-color: #fff;
-    padding: 1.2rem;
-    margin: 1rem 0;
-}
-
-.post-cont-header {
-    font-size: 3rem;
-    display: inline-flex;
-    align-items: center;
-    /* padding: 1.2rem 0; */
-}
-
-.post-cont-header img {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1.2rem;
-    border-radius: 50%;
+    background-color: yellowgreen;
 }

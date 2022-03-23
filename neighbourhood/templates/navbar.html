@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(247,247,247); align-items: center;">
+    <div class="container">
+        <a class="navbar-brand" href="/" style="font-size: 40px;">Chachisha</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="align-items: center;">
+            <ul class="navbar-nav ms-auto mt-lg-0" style="text-decoration: none;">
+                <li class="nav-item" style="margin-left:80px;">
+                    <form class="form-inline ml-auto" action="{% url 'search_results' %}">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="post">
+                    </form>
+                </li>
+                {% if not user.is_authenticated %}
+                <li class="nav-item px-5 text-decoration = none">
+                    <a class="nav-link" href="/accounts/register/">Register</a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link" href="/accounts/login/">Login</a>
+                </li>
+                {% endif %} {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'create-post' %}"> Add Neighbourhood </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'new-business' %}">Add a Business </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact-us' %}">Hood Contacts</a>
+                </li>
+                {% endif %} {% if user.is_authenticated %}
+                <li class="nav-item ">
+                    <a class="nav-link dropdown-toggle" href=" #" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{user.user_profile}}" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" data-bs-popper="none">
+                        <a class="dropdown-item" href="{% url 'new_profile'%}">Account</a>
+                        <a class="dropdown-item" href="{% url 'logout'%}">Logout</a>
+                    </div>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

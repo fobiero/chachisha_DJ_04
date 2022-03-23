@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+    <div class="heading text-center p-2">
+        {% if post %}
+        <h2>Found {{ post|length }} Business of searched term {{message}}</h2>
+        {% else %}
+        <h3 class="p-2"> No Business Found in {{message}}</h3>
+        {% endif %}
+    </div>
+    <div class="row">
+        {% for single_post in post %}
+        <div class="col-md-4 main-page" style=" margin-top: 10px;">
+            <div class="card card-cascade wider flex-fill">
+                <div class="card-body">
+                    <h4 class="card-title">{{single_post.business_name}}</h4>
+                    <p>Email:{{single_post.business_email}}</p>
+                    <p>Owner: {{single_post.business_owner}}</p>
+                    <div class="card-footer text-muted">Location: {{single_post.business_hood_id}}</div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <!-- <div class="row"> -->
+        <h3 class="text-center text-muted p-5">Sorry! No Content Posted.</h3>
+        <!-- </div> -->
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

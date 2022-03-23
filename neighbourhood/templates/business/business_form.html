@@ -1,0 +1,26 @@
+ {% load bootstrap5 %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Business</title>
+    {% block styles %} {% bootstrap_css %}
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet"> {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="text-center" style="margin-top:10px; padding: 2rem 0;">Post Business</h3>
+        <div class="card" style="padding: 2rem;">
+            <form action="{% url 'new-business' %}" method="post" enctype="multipart/form-data">
+                {%csrf_token%} {% bootstrap_form form%}
+                <input type="submit" class="btn btn-outline-info" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

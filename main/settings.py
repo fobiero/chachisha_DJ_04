@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,8 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'chachisha.apps.ChachishaConfig', #chachisha app
-    'users.apps.UsersConfig', #users app
+    'neighbourhood', #proj
     'crispy_forms', #css framework 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +83,12 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'village',
+        'USER': 'moringa',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -114,6 +122,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
+# adding config
+cloudinary.config( 
+  cloud_name = "duiodevhq", 
+  api_key = "198491964265135", 
+  api_secret = "RsHV-Q4rIMCFPKBBtVeziwNfU18" 
+)
 
 
 # Static files (CSS, JavaScript, Images)

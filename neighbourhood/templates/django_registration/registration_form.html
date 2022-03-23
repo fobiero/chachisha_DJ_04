@@ -1,0 +1,35 @@
+{%extends "base.html"%}{% load bootstrap5 %} {% block title %}signup{% endblock %} {% block content %}
+<style>
+    .form-text {
+        display: none !important;
+    }
+</style>
+<div class="container ">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {% if form.errors %}
+            <p class="text-danger"> Check Info provided!</p>
+            {% endif %}
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3>Create Account</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/accounts/register/" method="post">
+                        {% csrf_token %} {% bootstrap_form form %}
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-outline-info" value="Sign Up">
+                        </div>
+                        <input type="hidden" name="next" value="{{next}}">
+                    </form>
+                    <p class="mt-5">Already a Member?, <a href="/accounts/login/" class="text-primary">Login</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
