@@ -56,7 +56,6 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # end decouple settings 
 
-
 # Application definition
 
 INSTALLED_APPS = [
